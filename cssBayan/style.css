@@ -1,11 +1,24 @@
+body {
+  background-color: #F4F9F9;
+  font-weight: 800;
+  font-family: 'Comic Neue', cursive;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+
+h1 {
+  color: #545454;
+}
+
 .container {
-  max-width: 1200px;
+  max-width: 30%;
   margin: 0 auto;
   text-align: center;
 }
 
 .accordion {
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 label {
@@ -18,24 +31,31 @@ label {
 }
 
 .accordion:hover .accordion__title {
-  color: black;
+  color: #FFFFFF;
   font-weight: 800;
 }
 
 .accordion__panel {
-  background-color: orange;
+  background-color: #FFFFFF;
 }
 
 .accordion__heading {
-  background-color: yellowgreen;
+  background-color: #F25287;
   display: block;
-  padding: 15px 20px;
+  padding: 1rem 1.2rem;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.accordion__panel:last-child .accordion__heading {
+  border-bottom: 2px solid transparent;
 }
 
 .accordion__title {
-  color: blue;
+  color: #FFF8CD;
+  font-size: 1rem;
+  letter-spacing: 0.08rem;
   transition: all 0.8s ease;
 }
 
@@ -49,7 +69,7 @@ label {
 .accordion__icon {
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
 }
 
 .accordion__content > * {
@@ -61,29 +81,29 @@ input {
   display: none;
 }
 
-label:hover .accordion__content,
+label:hover > .accordion__content,
 input:checked + label > .accordion__content {
   max-height: 100vh;
   visibility: visible;
   opacity: 1;
+  padding: 1rem;
 }
 
-label:hover .accordion__content > *,
+label:hover > .accordion__content > *,
 input:checked + label > .accordion__content > * {
   opacity: 1;
 }
 
 label:hover .accordion__icon,
 input:checked + label .accordion__icon {
-  transition: all 0.8s ease;
   transform: rotate(45deg);
 }
 
 input:checked + label .accordion__title {
-  color: black;
+  color: #FFFFFF;
   font-weight: 800;
 }
 
 .accordion__content > img {
-  max-width: 500px;
+  max-width: 23rem;
 }
