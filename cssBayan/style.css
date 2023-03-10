@@ -1,0 +1,89 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+.accordion:hover .accordion__icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordion:hover .accordion__title {
+  color: black;
+  font-weight: 800;
+}
+
+.accordion__panel {
+  background-color: orange;
+}
+
+.accordion__heading {
+  background-color: yellowgreen;
+  display: block;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion__title {
+  color: blue;
+  transition: all 0.8s ease;
+}
+
+.accordion__content {
+  overflow: hidden;
+  visibility: hidden;
+  max-height: 0;
+  transition: all 0.8s ease;
+}
+
+.accordion__icon {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease;
+}
+
+.accordion__content > * {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+input {
+  display: none;
+}
+
+label:hover .accordion__content,
+input:checked + label > .accordion__content {
+  max-height: 100vh;
+  visibility: visible;
+  opacity: 1;
+}
+
+label:hover .accordion__content > *,
+input:checked + label > .accordion__content > * {
+  opacity: 1;
+}
+
+label:hover .accordion__icon,
+input:checked + label .accordion__icon {
+  transition: all 0.8s ease;
+  transform: rotate(45deg);
+}
+
+input:checked + label .accordion__title {
+  color: black;
+  font-weight: 800;
+}
+
+.accordion__content > img {
+  max-width: 500px;
+}
