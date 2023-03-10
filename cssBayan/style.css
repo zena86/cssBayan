@@ -2,8 +2,21 @@ body {
   background-color: #F4F9F9;
   font-weight: 800;
   font-family: 'Comic Neue', cursive;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #FFFFFF;
+  padding: 0 1rem;
+}
+
+@media (max-width: 820px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 0.8rem;
+  }
 }
 
 h1 {
@@ -11,7 +24,7 @@ h1 {
 }
 
 .container {
-  max-width: 30%;
+  max-width: 30rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -21,22 +34,27 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-label {
-  cursor: pointer;
-}
+@media (min-width: 820px) {
+  .accordion:hover .accordion__icon {
+    opacity: 1;
+    visibility: visible;
+  }
 
-.accordion:hover .accordion__icon {
-  opacity: 1;
-  visibility: visible;
-}
+  .accordion:hover .accordion__title {
+    color: #FFFFFF;
+  }
 
-.accordion:hover .accordion__title {
-  color: #FFFFFF;
-  font-weight: 800;
+  label {
+    cursor: pointer;
+  }
 }
 
 .accordion__panel {
   background-color: #FFFFFF;
+}
+
+label .accordion__heading {
+  cursor: pointer;
 }
 
 .accordion__heading {
@@ -54,9 +72,22 @@ label {
 
 .accordion__title {
   color: #FFF8CD;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
   letter-spacing: 0.08rem;
   transition: all 0.8s ease;
+}
+
+@media (max-width: 820px) {
+  .accordion__title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .accordion__title {
+    font-size: 1rem;
+  }
 }
 
 .accordion__content {
@@ -81,7 +112,6 @@ input {
   display: none;
 }
 
-label:hover > .accordion__content,
 input:checked + label > .accordion__content {
   max-height: 100vh;
   visibility: visible;
@@ -89,14 +119,29 @@ input:checked + label > .accordion__content {
   padding: 1rem;
 }
 
-label:hover > .accordion__content > *,
 input:checked + label > .accordion__content > * {
   opacity: 1;
 }
 
-label:hover .accordion__icon,
 input:checked + label .accordion__icon {
   transform: rotate(45deg);
+}
+
+@media (min-width: 820px) {
+  label:hover > .accordion__content {
+    max-height: 100vh;
+    visibility: visible;
+    opacity: 1;
+    padding: 1rem;
+  }
+
+  label:hover > .accordion__content > * {
+    opacity: 1;
+  }
+
+  label:hover .accordion__icon {
+    transform: rotate(45deg);
+  }
 }
 
 input:checked + label .accordion__title {
@@ -106,4 +151,5 @@ input:checked + label .accordion__title {
 
 .accordion__content > img {
   max-width: 23rem;
+  width: 90%;
 }
